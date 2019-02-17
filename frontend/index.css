@@ -134,13 +134,13 @@ td {
 }
 
 .shiba-pic:hover{
-  background-image: url(./shiba3.jpg);  
+  background-image: url(./assets/imgs/shiba3.jpg);  
 }
 .shiba-pic{
   margin: 15px 0;
   width: 200px;
   height: 100px;
-  background-image: url("https://gfnc1kn6pi-flywheel.netdna-ssl.com/wp-content/uploads/2018/05/shiba-inu-header.jpg");
+  background-image: url(./assets/imgs/shiba2.jpg);
   background-size: cover;
   width: 200px;
 }

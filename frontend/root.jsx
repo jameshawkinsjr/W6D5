@@ -1,17 +1,17 @@
 import React from 'react';
-import Clock from './clock';
-import ClockPicture from './clockPicture';
-import Happy from './happy';
-import Tabs from './tabs';
-import Weather from './weather';
-import Autocomplete from './autocomplete';
+import Clock from './widgets/clock';
+import ClockPicture from './widgets/clockPicture';
+import Happy from './widgets/happy';
+import Tabs from './widgets/tabs';
+import Weather from './widgets/weather';
+import Autocomplete from './widgets/autocomplete';
 
 class Root extends React.Component {
   render() {
     return (
       <div>
         <div id="shiba-sun">
-          <img src="../frontend/shiba.png"></img>
+          <img src="../frontend/assets/imgs/shiba.png"></img>
         </div>
         <div className="header">
           <h1>My Awesome Widgets</h1>

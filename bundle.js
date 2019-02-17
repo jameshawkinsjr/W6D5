@@ -81,15 +81,111 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./frontend/widgets.jsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./frontend/widgets/widgets.jsx");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./frontend/autocomplete.jsx":
-/*!***********************************!*\
-  !*** ./frontend/autocomplete.jsx ***!
-  \***********************************/
+/***/ "./frontend/root.jsx":
+/*!***************************!*\
+  !*** ./frontend/root.jsx ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _widgets_clock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./widgets/clock */ "./frontend/widgets/clock.jsx");
+/* harmony import */ var _widgets_clockPicture__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./widgets/clockPicture */ "./frontend/widgets/clockPicture.jsx");
+/* harmony import */ var _widgets_happy__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./widgets/happy */ "./frontend/widgets/happy.jsx");
+/* harmony import */ var _widgets_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./widgets/tabs */ "./frontend/widgets/tabs.jsx");
+/* harmony import */ var _widgets_weather__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./widgets/weather */ "./frontend/widgets/weather.jsx");
+/* harmony import */ var _widgets_autocomplete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./widgets/autocomplete */ "./frontend/widgets/autocomplete.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+
+
+var Root =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Root, _React$Component);
+
+  function Root() {
+    _classCallCheck(this, Root);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Root).apply(this, arguments));
+  }
+
+  _createClass(Root, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "shiba-sun"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "../frontend/assets/imgs/shiba.png"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "My Awesome Widgets"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_clock__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "empty-header"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widgets flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_autocomplete__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        myNames: names
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_tabs__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        myTabs: tabs
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_weather__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_happy__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
+    }
+  }]);
+
+  return Root;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+var shibaFacts = ['They were bred to be versatile hunters.', "`Shiba Inu` means `brushwood dog`", "The Shiba is the smallest of the six original Japanese dogs", "Shibas are the number one companion dog in Japan", "The first Shiba arrived in the United States in 1954", "Shibas are the 46th most popular dog in America", "The Japanese have 3 words to describe Shibas: kan-i, ryosei, soboku"];
+var tabs = [{
+  title: "Facts",
+  content: shibaFacts
+}, {
+  title: "Bloodlines",
+  content: "San In Shiba, the Mino Shiba, and the Shiba Shu Shiba"
+}, {
+  title: "Names",
+  content: "Most popular names: Aiko, Akira, Emiko"
+}];
+var names = ['1', '2', '3', '4', '5', '6'];
+/* harmony default export */ __webpack_exports__["default"] = (Root);
+
+/***/ }),
+
+/***/ "./frontend/widgets/autocomplete.jsx":
+/*!*******************************************!*\
+  !*** ./frontend/widgets/autocomplete.jsx ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -154,10 +250,10 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/clock.jsx":
-/*!****************************!*\
-  !*** ./frontend/clock.jsx ***!
-  \****************************/
+/***/ "./frontend/widgets/clock.jsx":
+/*!************************************!*\
+  !*** ./frontend/widgets/clock.jsx ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -243,10 +339,10 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/clockPicture.jsx":
-/*!***********************************!*\
-  !*** ./frontend/clockPicture.jsx ***!
-  \***********************************/
+/***/ "./frontend/widgets/clockPicture.jsx":
+/*!*******************************************!*\
+  !*** ./frontend/widgets/clockPicture.jsx ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -301,10 +397,10 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/happy.jsx":
-/*!****************************!*\
-  !*** ./frontend/happy.jsx ***!
-  \****************************/
+/***/ "./frontend/widgets/happy.jsx":
+/*!************************************!*\
+  !*** ./frontend/widgets/happy.jsx ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -326,10 +422,10 @@ var Happy = function Happy() {
 
 /***/ }),
 
-/***/ "./frontend/root.jsx":
-/*!***************************!*\
-  !*** ./frontend/root.jsx ***!
-  \***************************/
+/***/ "./frontend/widgets/tabs.jsx":
+/*!***********************************!*\
+  !*** ./frontend/widgets/tabs.jsx ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -337,103 +433,7 @@ var Happy = function Happy() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clock */ "./frontend/clock.jsx");
-/* harmony import */ var _clockPicture__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clockPicture */ "./frontend/clockPicture.jsx");
-/* harmony import */ var _happy__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./happy */ "./frontend/happy.jsx");
-/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tabs */ "./frontend/tabs.jsx");
-/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./weather */ "./frontend/weather.jsx");
-/* harmony import */ var _autocomplete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./autocomplete */ "./frontend/autocomplete.jsx");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-
-
-
-var Root =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Root, _React$Component);
-
-  function Root() {
-    _classCallCheck(this, Root);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Root).apply(this, arguments));
-  }
-
-  _createClass(Root, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "shiba-sun"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "../frontend/shiba.png"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "My Awesome Widgets"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_clock__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "empty-header"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main flex"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "widgets flex"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_autocomplete__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        myNames: names
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tabs__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        myTabs: tabs
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_weather__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_happy__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
-    }
-  }]);
-
-  return Root;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-var shibaFacts = ['They were bred to be versatile hunters.', "`Shiba Inu` means `brushwood dog`", "The Shiba is the smallest of the six original Japanese dogs", "Shibas are the number one companion dog in Japan", "The first Shiba arrived in the United States in 1954", "Shibas are the 46th most popular dog in America", "The Japanese have 3 words to describe Shibas: kan-i, ryosei, soboku"];
-var tabs = [{
-  title: "Facts",
-  content: shibaFacts
-}, {
-  title: "Bloodlines",
-  content: "San In Shiba, the Mino Shiba, and the Shiba Shu Shiba"
-}, {
-  title: "Names",
-  content: "Most popular names: Aiko, Akira, Emiko"
-}];
-var names = ['1', '2', '3', '4', '5', '6'];
-/* harmony default export */ __webpack_exports__["default"] = (Root);
-
-/***/ }),
-
-/***/ "./frontend/tabs.jsx":
-/*!***************************!*\
-  !*** ./frontend/tabs.jsx ***!
-  \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _tabsContent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabsContent */ "./frontend/tabsContent.jsx");
+/* harmony import */ var _tabsContent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabsContent */ "./frontend/widgets/tabsContent.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -524,10 +524,10 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/tabsContent.jsx":
-/*!**********************************!*\
-  !*** ./frontend/tabsContent.jsx ***!
-  \**********************************/
+/***/ "./frontend/widgets/tabsContent.jsx":
+/*!******************************************!*\
+  !*** ./frontend/widgets/tabsContent.jsx ***!
+  \******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -557,10 +557,10 @@ var tabContent = function tabContent(props) {
 
 /***/ }),
 
-/***/ "./frontend/weather.jsx":
-/*!******************************!*\
-  !*** ./frontend/weather.jsx ***!
-  \******************************/
+/***/ "./frontend/widgets/weather.jsx":
+/*!**************************************!*\
+  !*** ./frontend/widgets/weather.jsx ***!
+  \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -670,10 +670,10 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/widgets.jsx":
-/*!******************************!*\
-  !*** ./frontend/widgets.jsx ***!
-  \******************************/
+/***/ "./frontend/widgets/widgets.jsx":
+/*!**************************************!*\
+  !*** ./frontend/widgets/widgets.jsx ***!
+  \**************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -683,7 +683,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./root */ "./frontend/root.jsx");
+/* harmony import */ var _root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../root */ "./frontend/root.jsx");
 
 
 
