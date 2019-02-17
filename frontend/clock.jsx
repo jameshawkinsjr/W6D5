@@ -26,19 +26,14 @@ class Clock extends React.Component {
     let dateString = this.state.time.toDateString();
     let timeString = this.state.time.toLocaleTimeString();
     return (
-    <div className="widget-box">
-      <h3> Shiba Clock Widget</h3>
       <div className="clock flex">
         <div className="date flex">
-            <div><strong>Date:</strong></div>
-            <div>{dateString}</div>     
+            <div><span>{dateString}</span></div>     
         </div>
         <div className="time flex">
-            <div><strong>Time:</strong></div>
-            <div>{timeString}</div>     
+            <div><span>{timeString}</span></div>     
         </div> 
       </div>
-    </div>
     )}
 
 }

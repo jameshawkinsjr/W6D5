@@ -47,7 +47,7 @@ class Weather extends React.Component {
         if (xmlhttp.readyState == XMLHttpRequest.DONE) {
            if (xmlhttp.status == 200) {
              let response = JSON.parse(xmlhttp.response);
-              {that.setState( {city: response.name, temp: response.main.temp}  )}
+              {that.setState( {city: response.name, temp: Math.floor(response.main.temp)}  )}
           }
            else if (xmlhttp.status == 400) {
               alert('There was an error 400');

@@ -1,5 +1,6 @@
 h1, h3, p {
   text-align: center;
+  font-family: 'Oswald', sans-serif;
 }
 
 p {
@@ -23,18 +24,61 @@ html {
 }
 
 .widgets {
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  align-content: center;
+  justify-content: center
 }
 
 img {
 }
 
+.header {
+  display: block;
+  height: 75px;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background: wheat;
+}
+
+.header h1 {
+  position: relative;
+  top: -10px;
+}
+
+.clock {
+  justify-content: flex-end;
+  align-content: flex-end;
+  text-align: right;
+  flex-direction: column;
+  padding: 10px 15px;
+  top: 0;
+  right: 0;
+  position: fixed;
+}
+
+.clock span {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+}
+#shiba-sun {
+  position: fixed;
+  z-index: 1;
+}
+.empty-header {
+  height: 75px;
+}
+#shiba-sun img {
+  height: 60px;
+}
 h3 {
   font-size: 24px;
 }
 
 span {
-  color: blue;
+  color: #385F71;
 }
 
 .weather {
@@ -42,11 +86,6 @@ span {
   padding: 5px 15px;
 }
 
-.clock {
-  justify-content: center;
-  flex-direction: column;
-  padding: 5px 15px;
-}
 
 .time, .date {
   justify-content: space-between;
@@ -65,6 +104,10 @@ td {
     font-family: 'Oswald', sans-serif;
     width: 300px;
     background: wheat;
+}
+
+.widget-box:hover {
+  background: cornsilk;
 }
 .widget-box > h3 {
   border-bottom: 1px solid #385F71;

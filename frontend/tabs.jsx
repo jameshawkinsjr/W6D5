@@ -25,7 +25,7 @@ class Tabs extends React.Component {
     render() {
       return(
           <div className="tabs-widget widget-box">
-            <h3> Shiba Tab Widget</h3>
+            <h3> Shiba Fact Widget</h3>
             <div className="tab-headers-index flex">
                 {this.props.myTabs.map((title, idx) => {
                   let index = idx;
