@@ -101,8 +101,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _widgets_clockPicture__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./widgets/clockPicture */ "./frontend/widgets/clockPicture.jsx");
 /* harmony import */ var _widgets_happy__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./widgets/happy */ "./frontend/widgets/happy.jsx");
 /* harmony import */ var _widgets_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./widgets/tabs */ "./frontend/widgets/tabs.jsx");
-/* harmony import */ var _widgets_weather__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./widgets/weather */ "./frontend/widgets/weather.jsx");
-/* harmony import */ var _widgets_autocomplete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./widgets/autocomplete */ "./frontend/widgets/autocomplete.jsx");
+/* harmony import */ var _widgets_randomFacts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./widgets/randomFacts */ "./frontend/widgets/randomFacts.jsx");
+/* harmony import */ var _widgets_weather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./widgets/weather */ "./frontend/widgets/weather.jsx");
+/* harmony import */ var _widgets_autocomplete__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./widgets/autocomplete */ "./frontend/widgets/autocomplete.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -120,6 +121,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -155,29 +157,28 @@ function (_React$Component) {
         className: "main flex"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "widgets flex"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_autocomplete__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_autocomplete__WEBPACK_IMPORTED_MODULE_7__["default"], {
         myNames: names
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_tabs__WEBPACK_IMPORTED_MODULE_4__["default"], {
         myTabs: tabs
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_weather__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_happy__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_randomFacts__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        facts: shibaFacts
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_weather__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_widgets_happy__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
     }
   }]);
 
   return Root;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-var shibaFacts = ['They were bred to be versatile hunters.', "`Shiba Inu` means `brushwood dog`", "The Shiba is the smallest of the six original Japanese dogs", "Shibas are the number one companion dog in Japan", "The first Shiba arrived in the United States in 1954", "Shibas are the 46th most popular dog in America", "The Japanese have 3 words to describe Shibas: kan-i, ryosei, soboku"];
+var shibaFacts = ['They were bred to be versatile hunters.', "`Shiba Inu` means `brushwood dog`", "The Shiba is the smallest of the six original Japanese dogs", "Shibas are the number one companion dog in Japan", "The first Shiba arrived in the United States in 1954", "Shibas are the 46th most popular dog in America", "The Japanese have 3 words to describe Shibas: kan-i, ryosei, soboku", "Archeologists have found dogs about the size of Shibas in sites from 14,500 B.C. to 300 A.D."];
 var tabs = [{
-  title: "Facts",
-  content: shibaFacts
-}, {
   title: "Bloodlines",
   content: "San In Shiba, the Mino Shiba, and the Shiba Shu Shiba"
 }, {
   title: "Names",
   content: "Most popular names: Aiko, Akira, Emiko"
 }];
-var names = ['1', '2', '3', '4', '5', '6'];
+var names = ['Alex', 'James', 'Dima', 'Shroder', 'Birju', 'Gary'];
 /* harmony default export */ __webpack_exports__["default"] = (Root);
 
 /***/ }),
@@ -231,15 +232,35 @@ function (_React$Component) {
   }
 
   _createClass(Autocomplete, [{
+    key: "updateValue",
+    value: function updateValue(name) {
+      this.setState({
+        inputVal: name
+      });
+    }
+  }, {
+    key: "displayNames",
+    value: function displayNames() {
+      var _this2 = this;
+
+      return this.props.myNames.map(function (name, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          id: name,
+          onClick: function onClick(e) {
+            _this2.updateValue(name);
+          }
+        }, name);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "autocomplete-widget widget-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.myNames.map(function (name, idx) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, name);
-      })));
+        className: "autocomplete-widget widget-box flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Shiba Autocomplete Widget "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.inputVal
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.displayNames));
     }
   }]);
 
@@ -422,6 +443,96 @@ var Happy = function Happy() {
 
 /***/ }),
 
+/***/ "./frontend/widgets/randomFacts.jsx":
+/*!******************************************!*\
+  !*** ./frontend/widgets/randomFacts.jsx ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+var RandomFacts =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(RandomFacts, _React$Component);
+
+  function RandomFacts(props) {
+    var _this;
+
+    _classCallCheck(this, RandomFacts);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(RandomFacts).call(this, props));
+    _this.state = {
+      currentStat: "Loading"
+    };
+    _this.randomFact = _this.randomFact.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(RandomFacts, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.randomFact();
+    }
+  }, {
+    key: "randomNum",
+    value: function randomNum() {
+      return Math.floor(Math.random() * this.props.facts.length - 1 + 1);
+    }
+  }, {
+    key: "randomFact",
+    value: function randomFact() {
+      var _this2 = this;
+
+      this.setState(function (state) {
+        return {
+          currentStat: _this2.props.facts[_this2.randomNum()]
+        };
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "fact-widget widget-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Shiba Fact Widget "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+        className: "fact-widget-box flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.randomFact
+      }, "Click here for a random fact!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.currentStat)));
+    }
+  }]);
+
+  return RandomFacts;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (RandomFacts);
+
+/***/ }),
+
 /***/ "./frontend/widgets/tabs.jsx":
 /*!***********************************!*\
   !*** ./frontend/widgets/tabs.jsx ***!
@@ -509,7 +620,7 @@ function (_React$Component) {
             _this2.handleClick(index);
           },
           key: title.title
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, title.title));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, title.title));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tabsContent__WEBPACK_IMPORTED_MODULE_1__["default"], {
         index: this.state.tabIndex,
         content: this.props.myTabs
@@ -538,19 +649,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var TabsContent = function TabsContent(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, tabContent(props)));
-};
-
-var tabContent = function tabContent(props) {
-  // if (false) {
-  console.log(props.content[props.index].content); // debugger
-
-  if (props.content[props.index].content instanceof Array) {
-    var rand = Math.floor(Math.random() * props.content[props.index].content.length - 1 + 1);
-    return props.content[props.index].content[rand];
-  } else {
-    return props.content[props.index].content;
-  }
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.content[props.index].content));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (TabsContent);

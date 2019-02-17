@@ -3,6 +3,7 @@ import Clock from './widgets/clock';
 import ClockPicture from './widgets/clockPicture';
 import Happy from './widgets/happy';
 import Tabs from './widgets/tabs';
+import RandomFacts from './widgets/randomFacts';
 import Weather from './widgets/weather';
 import Autocomplete from './widgets/autocomplete';
 
@@ -22,6 +23,7 @@ class Root extends React.Component {
             <div className="widgets flex">
               <Autocomplete myNames={names}/>
               <Tabs myTabs={tabs}/>
+              <RandomFacts facts={shibaFacts}/>
               <Weather />
               <Happy />
             </div>
@@ -38,16 +40,16 @@ let shibaFacts = [
     "Shibas are the number one companion dog in Japan",
     "The first Shiba arrived in the United States in 1954",
     "Shibas are the 46th most popular dog in America",
-    "The Japanese have 3 words to describe Shibas: kan-i, ryosei, soboku"
+    "The Japanese have 3 words to describe Shibas: kan-i, ryosei, soboku",
+    "Archeologists have found dogs about the size of Shibas in sites from 14,500 B.C. to 300 A.D."
   ]
 
 let tabs = [
-    { title: "Facts", content: shibaFacts },
     { title: "Bloodlines", content: "San In Shiba, the Mino Shiba, and the Shiba Shu Shiba" },
     { title: "Names", content: "Most popular names: Aiko, Akira, Emiko" }
   ]
 
-let names = [ '1','2','3','4','5','6']
+let names = [ 'Alex','James','Dima','Shroder','Birju','Gary']
 
   
 

@@ -30,15 +30,9 @@ class Tabs extends React.Component {
                 {this.props.myTabs.map((title, idx) => {
                   let index = idx;
                   return (
-                  <div 
-                    id={this.activeHeader(index)}
-                    className="tab-headers" 
-                    onClick={(e) => {this.handleClick(index)}}
-                    key={title.title}>
-                      <h3>
-                      {title.title}
-                      </h3>
-                  </div>
+                    <div id={this.activeHeader(index)} className="tab-headers" onClick={(e) => {this.handleClick(index)}} key={title.title}>
+                      <p>{title.title}</p>
+                    </div>
                   )
                 })}
             </div>

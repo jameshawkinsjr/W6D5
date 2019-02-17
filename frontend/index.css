@@ -30,7 +30,15 @@ html {
   justify-content: center
 }
 
-img {
+button {
+  background: #385F71;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 10px;
 }
 
 .header {
@@ -127,10 +135,16 @@ td {
   position: fixed;
 }
 
-.happy-widget{
+.happy-widget, .fact-widget-box{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.autocomplete-widget {
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .shiba-pic:hover{
@@ -151,7 +165,7 @@ td {
   margin: 0 5px;
 }
 .tab-headers {
-  width: 33%;
+  width: 50%;
 }
 .tab-headers:hover {
   color: #385F71;
