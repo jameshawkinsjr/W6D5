@@ -30,7 +30,7 @@ class Weather extends React.Component {
 
   buildURL(lat,lng){
     const key = "APPID=60c2b1cffd988f585be5353d9b02639d"
-    let url = "http://api.openweathermap.org/data/2.5/weather?"
+    let url = "https://api.openweathermap.org/data/2.5/weather?"
     let units = "units=imperial"
     let loc = `lat=${lat}&lon=${lng}&`
     return `${url}${loc}&${units}&${key}`
