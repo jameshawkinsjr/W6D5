@@ -124,6 +124,17 @@ td {
   padding: 10px;
 }
 
+.autocomplete {
+  margin-left: 20px;
+}
+
+.autocomplete li {
+  list-style-type: none;
+}
+.autocomplete li:hover {
+  color: #385F71;
+  cursor: pointer;
+}
 .clock-widget {
   border-radius: 50%;
   background-image: url("./assets/imgs/clock.png");

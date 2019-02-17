@@ -204,13 +204,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -228,6 +228,9 @@ function (_React$Component) {
     _this.state = {
       inputVal: ""
     };
+    _this.changeValue = _this.changeValue.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.updateValue = _this.updateValue.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.displayNames = _this.displayNames.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -239,28 +242,45 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "changeValue",
+    value: function changeValue(event) {
+      this.setState({
+        inputVal: event.target.value
+      });
+    }
+  }, {
     key: "displayNames",
     value: function displayNames() {
       var _this2 = this;
 
-      return this.props.myNames.map(function (name, idx) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          id: name,
-          onClick: function onClick(e) {
-            _this2.updateValue(name);
-          }
-        }, name);
+      var names = this.props.myNames.map(function (name, idx) {
+        var name2 = name.toLowerCase();
+
+        var inputVal = _this2.state.inputVal.toLowerCase();
+
+        if (name2.startsWith(inputVal)) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+            key: name,
+            onClick: function onClick(e) {
+              _this2.updateValue(name);
+            }
+          }, " > ", name);
+        }
       });
+      return names;
     }
   }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "autocomplete-widget widget-box flex"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Shiba Autocomplete Widget "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Shiba Autocomplete Widget "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "autocomplete"
+      }, "Search:  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.inputVal
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.displayNames));
+        value: this.state.inputVal,
+        onChange: this.changeValue
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.displayNames())));
     }
   }]);
 
